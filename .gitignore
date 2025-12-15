@@ -1,0 +1,25 @@
+
+# Python virtual environments
+.venv/
+venv/
+__pycache__/
+
+# Automatically generated fields
+*.pyc
+*.ipynb_checkpoints
+
+# Data / (the data will be versioned with DVC lately)
+data/
+
+# Model artifacts (will be managed with Model Registry)
+models/
+
+# Logs and local configuration
+*.log
+.DS_Store
+
+# MLflow
+mlruns/
+
+# Docker
+.dockerignore

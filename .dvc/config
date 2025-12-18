@@ -1,4 +1,4 @@
 [core]
     remote = storage
-['remote "storage"']
-    url = gdrive://1XlAiozSzia_Pu5VFzsZs3gb0-Ik4iolZ
+['remote "origin"']
+    url = https://dagshub.com/adrigonzalo/NEAR_REAL_TIME_HOUSING_PRICE_PREDICTION_SYSTEM.dvc

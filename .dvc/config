@@ -1,4 +1,4 @@
 [core]
-    remote = storage
+    remote = origin
 ['remote "origin"']
     url = https://dagshub.com/adrigonzalo/NEAR_REAL_TIME_HOUSING_PRICE_PREDICTION_SYSTEM.dvc

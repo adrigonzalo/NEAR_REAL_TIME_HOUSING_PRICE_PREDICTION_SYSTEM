@@ -64,6 +64,28 @@ def save_processed_data(df: pd.DataFrame, file_name: str):
     print(f"Processed data save in: {file_path}")
 
 
+# FUNCTION TO CREATE NEW FEATURES
+def create_features(df):
+
+    # Age of the house
+    df['HouseAge'] = 2025 - df['YearBuilt']
+
+    # Total area of the house
+    df['TotalSF'] = df['TotalBsmtSF'] + df['1stFlrSF'] + df['2ndFlrSF']
+
+    # Total baths (completed baths + 0.5 of the toilets)
+    df['Total Bathrooms'] = df['FullBath'] + (0.5 * df['HalfBath']) + df['BsmtFullBath']
+
+
+    # Delete the original columns which we resume before
+    cols_to_drop = ['YearBuilt', 'TotalBsmtSF', '1stFlrSF', '2ndFlrSF', 'FullBath', 'HalfBath', 'BsmtFullBath']
+    df = df.drop(columns=cols_to_drop)
+
+    return df
+
+
+
+
 if __name__ == "__main__":
 
     # 1. Load data
@@ -73,6 +95,9 @@ if __name__ == "__main__":
     # 2. Preprocess.
     train_df_processed = initial_cleaning(train_df_raw.copy())
     test_df_processed = initial_cleaning(test_df_raw.copy())
+
+    # 3. Create new features
+    create_features(train_df_processed)
 
     # Save
     save_processed_data(train_df_processed, 'train_processed.csv')

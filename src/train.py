@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np  
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import mean_squared_error, r2_score
 import mlflow
 import mlflow.sklearn
@@ -33,7 +34,8 @@ def train_model():
     with mlflow.start_run(run_name="BaseLine_Linear_Regression"):
 
         # Train
-        model = LinearRegression()
+        # model = LinearRegression()
+        model = RandomForestClassifier(n_estimators=200, max_depth=10, random_state=42)
         model.fit(X_train, y_train)
 
         # Predict and evaluate

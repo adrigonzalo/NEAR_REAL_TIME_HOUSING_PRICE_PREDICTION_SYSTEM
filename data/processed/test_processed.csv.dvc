@@ -1,5 +1,0 @@
-outs:
-- md5: 9bb4943106481e7dc87f8a7f7a054876
-  size: 491106
-  hash: md5
-  path: test_processed.csv

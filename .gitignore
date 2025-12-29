@@ -9,7 +9,7 @@ __pycache__/
 *.ipynb_checkpoints
 
 # Data / (the data will be versioned with DVC lately)
-# data/
+data/
 
 # Model artifacts (will be managed with Model Registry)
 models/
